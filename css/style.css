@@ -1,0 +1,225 @@
+/******************** START VARS ********************/
+:root {
+    --htopbar: 54px; /** ALTURA DO TOPBAR **/
+    --margin-s: 11px; /** MARGIN SMALL **/
+    --margin-m: 15px; /** MARGIN MEDIUM **/
+
+}
+/******************** END VARS ********************/
+
+/******************** START GENERAL ********************/
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.border-round {
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+}
+
+/******************** END GENERAL ********************/
+
+
+
+/******************** START CONTAINERS ********************/
+.row {
+    display: flex;
+    flex-direction: row;
+} 
+
+.flex-items-center {
+    align-items: center;
+}
+
+.flex-content-center {
+    justify-content: center;
+}
+
+.bar-top {
+    height: var(--htopbar);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #DBDBDB;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.bar-top-content{
+    width: 614px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bar-side {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    right:0;    
+    background-color: blue;
+}
+
+.content {
+    margin-top: var(--htopbar);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E5E5E5;
+}
+
+.container-main {
+    height: 100%;
+    width: 614px;
+}
+
+.container-posts {
+    margin-top: 24px;
+}
+
+.box-stories {
+    display: flex;
+    align-items: center;
+    margin-top: 34px;
+    height: 118px;
+    background-color:#FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    padding-left: 18px;
+    overflow-x: hidden;
+}
+
+.box-storie {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.frame-storie {
+    width: 66px;
+    height: 66px;
+}
+
+.img-storie {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.box-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+}
+
+.box-post > div {
+    width: 100%;
+}
+
+.box-post-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-post-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-post-status {
+    display: flex;
+    align-items: center;
+}
+
+/******************** END CONTAINERS ********************/
+
+/******************** START INPUT ********************/
+.input-search {
+    width: 215px;
+    height: 28px;
+    text-align: center;
+    background: #FAFAFA;
+}
+/******************** END INPUT ********************/
+
+
+/******************** START DIVISORS ********************/
+.divisor-topbar {
+    width: 1px;
+    height: 22px;
+    background-color: #DBDBDB;
+    margin: 0 8px 0 8px;
+}
+
+
+/******************** END DIVISORS ********************/
+
+/******************** START IMAGES ********************/
+.img-post {
+    width: 612px;
+    height: 612px;
+}
+
+.img-profile-small {
+    width: 32px;
+    height: 32px;
+}
+
+.img-profile-mini {
+    width: 24px;
+    height: 24px;
+}
+
+.logo-txt {
+    margin-top: 7px;
+}
+
+
+/******************** END IMAGES ********************/
+
+/******************** START TEXTS ********************/
+en {
+    font-weight: 700;
+}
+
+strong  {
+    font-weight: 700;
+}
+
+.txt-username {
+    color: black;
+}
+
+.txt-username-storie {
+    color: #262626;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 14.06px;
+    margin-top: 3px;
+}
+
+div {
+    display: block;
+}
+/******************** END TEXTS ********************/
+
+
+
+
+

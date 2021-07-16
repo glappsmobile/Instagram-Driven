@@ -1,0 +1,169 @@
+/******************** START UTILS ********************/
+/******************** START VARS ********************/
+:root {
+    --margin-m: 15px; /** ALTURA DO TOPBAR **/
+    --margin-s: 11px; /** ALTURA DO TOPBAR **/
+}
+/******************** END VARS ********************/
+
+/******************** START DEBUG ********************/
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.relative {
+    position: relative;
+}
+
+/******************** END DEBUG ********************/
+
+/******************** START SIZES ********************/
+.h-100 {
+    height: 100%;
+}
+
+.h-auto {
+    height: auto;
+}
+
+/******************** END SIZES ********************/
+
+
+/******************** START DISPLAY ********************/
+.flex {
+    display: flex;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+}
+/******************** END DISPLAY ********************/
+
+/******************** START MARGIN ********************/
+.margin-none {
+    margin: 0px;
+}
+
+.container-margin-m-r > * {
+    margin-right: var(--margin-m);
+}
+
+.container-margin-s-r > * {
+    margin-right: var(--margin-s);
+}
+
+/** M **/
+.margin-m-l {
+    margin-left: var(--margin-m);
+}
+
+.margin-m-r {
+    margin-right: var(--margin-m);
+}
+
+.margin-m-h {
+    margin-left: var(--margin-m);
+    margin-right: var(--margin-m);
+}
+
+.margin-m-t{
+    margin-top: var(--margin-m);
+ }
+
+ .margin-m-b{
+    margin-bottom: var(--margin-m);
+}
+
+.margin-m-v{
+    margin-top: var(--margin-m);
+    margin-bottom: var(--margin-m);
+}
+
+.margin-m{
+    margin: var(--margin-m) var(--margin-m) var(--margin-m) var(--margin-m);
+}
+
+/** S **/
+
+.margin-s-l {
+    margin-left: var(--margin-s);
+}
+
+.margin-s-r {
+    margin-right: var(--margin-s);
+}
+
+.margin-s-h {
+    margin-left: var(--margin-s);
+    margin-right: var(--margin-s);
+}
+
+.margin-s-t{
+    margin-top: var(--margin-s);
+ }
+
+ .margin-s-b{
+    margin-bottom: var(--margin-s);
+}
+
+.margin-s-v{
+    margin-top: var(--margin-s);
+    margin-bottom: var(--margin-s);
+}
+
+.margin-s{
+    margin: var(--margin-s) var(--margin-s) var(--margin-s) var(--margin-s);
+}
+
+/******************** END MARGIN ********************/
+
+/******************** START PADDING ********************/
+
+.padding-m-l {
+    padding-left: var(--margin-m);
+}
+
+.padding-m-r {
+    padding-right: var(--margin-m);
+}
+
+.padding-m-h {
+    padding-left: var(--margin-m);
+    padding-right: var(--margin-m);
+}
+
+.padding-m-t {
+    padding-top: var(--margin-m);
+}
+
+.padding-m-b {
+    padding-bottom: var(--margin-m);
+}
+
+.padding-m-v {
+    padding-top: var(--margin-m);
+    padding-bottom: var(--margin-m);
+}
+
+.padding-m {
+    padding: var(--margin-m) var(--margin-m) var(--margin-m) var(--margin-m);
+}
+/******************** END PADDING ********************/
+
+
+/******************** END UTILS ********************/
