@@ -1,13 +1,24 @@
 /******************** START VARS ********************/
 :root {
-    --htopbar: 54px; /** ALTURA DO TOPBAR **/
+    --htopbar: 54px; /** HEIGHT TOPBAR **/
     --margin-s: 11px; /** MARGIN SMALL **/
     --margin-m: 15px; /** MARGIN MEDIUM **/
-
+    --margin-from-topbar: 34px; /** MARGIN FROM THE TOPBAR TO THE CONTENT **/
+    --padding-top-sidebar: 24px; /** SIDEBAR'S PADDING TOP **/
 }
 /******************** END VARS ********************/
 
 /******************** START GENERAL ********************/
+@font-face {
+    font-family: RobotoThin;
+    src: url(../font/Roboto-Light.ttf);
+  }
+
+  @font-face {
+    font-family: Roboto;
+    src: url(../font/Roboto.ttf);
+  }
+
 * {
     box-sizing: border-box;
 }
@@ -21,9 +32,26 @@ a {
     border-radius: 3px;
 }
 
+body {
+    background-color: #E5E5E5;
+    font-family: 'Roboto', sans-serif;
+}
+
 /******************** END GENERAL ********************/
 
+/******************** START BUTTONS *****************/
 
+.button-next {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+    filter: drop-shadow(-1px 4px 3px rgba(0, 0, 0, 0.3));
+
+}
+
+/******************** END BUTTON ********************/
 
 /******************** START CONTAINERS ********************/
 .row {
@@ -48,13 +76,12 @@ a {
     border-bottom: 1px solid #DBDBDB;
     background-color: #FFFFFF;
     display: flex;
-    align-items: center;
     justify-content: space-around;
-
+    z-index: 10;
 }
 
 .bar-top-content{
-    width: 614px;
+    width: calc(614px + 28px + 293px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,42 +89,62 @@ a {
 
 .bar-side {
     height: 100%;
-    width: 0px;
-    position: fixed;
-    right:0;    
-    background-color: blue;
+    width: 293px;
+}
+
+.holder-sidebar {
+    width: 293px;
+    height: calc(100vh - var(--htopbar) - var(--padding-top-sidebar));
+    margin-top: calc(var(--margin-from-topbar) + var(--padding-top-sidebar));
+    margin-left: 28px;
+    position: sticky;
+    top: 60px;
 }
 
 .content {
+    width: 100%;
     margin-top: var(--htopbar);
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #E5E5E5;
+    justify-content: center;
 }
 
 .container-main {
     height: 100%;
     width: 614px;
-}
-
-.container-posts {
-    margin-top: 24px;
+    
 }
 
 .box-stories {
     display: flex;
+    position: relative;
     align-items: center;
-    margin-top: 34px;
+    margin-top: var(--margin-from-topbar);
     height: 118px;
     background-color:#FFFFFF;
     border: 1px solid #DBDBDB;
     border-radius: 3px;
     padding-left: 18px;
     overflow-x: hidden;
+    margin-bottom: 24px;
+}
+
+.container-posts {
+    margin-top: 24px;
+}
+.container-suggestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .box-storie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-storie-img {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -109,12 +156,16 @@ a {
     height: 66px;
 }
 
+
 .img-storie {
     width: 56px;
     height: 56px;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    top:0;
+    margin: auto; 
 }
 
 .box-post {
@@ -155,6 +206,7 @@ a {
     height: 28px;
     text-align: center;
     background: #FAFAFA;
+    font-size: 12px;
 }
 /******************** END INPUT ********************/
 
@@ -176,7 +228,7 @@ a {
     height: 612px;
 }
 
-.img-profile-small {
+.img-small {
     width: 32px;
     height: 32px;
 }
@@ -190,33 +242,78 @@ a {
     margin-top: 7px;
 }
 
+.img-medium {
+    width: 56px;
+    height: 56px;
+}
+
 
 /******************** END IMAGES ********************/
 
 /******************** START TEXTS ********************/
+.footer * {
+    color: #C7C7C7;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 31px;
+}
+
+
 en {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 strong  {
-    font-weight: 700;
+    font-weight: 600;
 }
 
-.txt-username {
+.txt-username-strong {
     color: black;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
 }
 
 .txt-username-storie {
     color: #262626;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
-    line-height: 14.06px;
     margin-top: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 66px;
+    white-space: nowrap;
 }
 
-div {
-    display: block;
+.txt-gray {
+    color: #8E8E8E;
 }
+
+.txt-black {
+    color: #262626;
+}
+
+.txt-blue {
+    color: #139EF2;
+}
+
+.fss {
+    font-size: 12px;
+}
+
+.fsm {
+    font-size: 14px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.skinny {
+    font-weight: 300;
+    font-family: RobotoThin;
+}
+
 /******************** END TEXTS ********************/
 
 
