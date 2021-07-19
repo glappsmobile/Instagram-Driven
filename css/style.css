@@ -20,6 +20,10 @@
     src: url(../font/Roboto-Regular.ttf);
   }
 
+  ion-icon{
+      font-size: 24px;
+  }
+
 * {
     box-sizing: border-box;
 }
@@ -79,6 +83,16 @@ en:hover {
     right: 8px;
     filter: drop-shadow(-1px 4px 3px rgba(0, 0, 0, 0.3));
 
+}
+
+.btn-publish {
+    font-weight: 600;
+    color: #B2DFFC; 
+}
+
+.btn-publish:hover {
+    transition: 300ms;
+    color: #0095F6;
 }
 
 /******************** END BUTTON ********************/
