@@ -1,10 +1,11 @@
 /******************** START VARS ********************/
 :root {
     --htopbar: 54px; /** HEIGHT TOPBAR **/
+    --hbottombar: 55px; /** HEIGHT BOTTOMBAR **/
     --margin-s: 11px; /** MARGIN SMALL **/
     --margin-m: 15px; /** MARGIN MEDIUM **/
     --margin-from-topbar: 34px; /** MARGIN FROM THE TOPBAR TO THE CONTENT **/
-    --padding-top-sidebar: 24px; /** SIDEBAR'S PADDING TOP **/
+    --margin-top-sidebar: calc(var(--margin-from-topbar) + 21px); /** SIDEBAR'S PADDING TOP **/
 }
 /******************** END VARS ********************/
 
@@ -16,7 +17,7 @@
 
   @font-face {
     font-family: Roboto;
-    src: url(../font/Roboto.ttf);
+    src: url(../font/Roboto-Regular.ttf);
   }
 
 * {
@@ -27,7 +28,7 @@ a {
     text-decoration: none;
 }
 
-.border-round {
+.border-main {
     border: 1px solid #DBDBDB;
     border-radius: 3px;
 }
@@ -35,6 +36,35 @@ a {
 body {
     background-color: #E5E5E5;
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    overflow-x: hidden;
+
+
+}
+
+input:focus {
+    outline: none;
+}
+
+
+img:hover {
+    cursor: pointer;
+}
+
+en:hover {
+    cursor: pointer;
+}
+
+.mobile {
+    display: none !important;
+}
+
+.desktop {
+    display: flex !important;
+}
+
+.last-margin-bottom {
+    margin-bottom: 10px !important;
 }
 
 /******************** END GENERAL ********************/
@@ -81,24 +111,20 @@ body {
 }
 
 .bar-top-content{
-    width: calc(614px + 28px + 293px);
+    width: 100%;
+    max-width: calc(614px + 28px + 293px);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .bar-side {
-    height: 100%;
     width: 293px;
-}
-
-.holder-sidebar {
-    width: 293px;
-    height: calc(100vh - var(--htopbar) - var(--padding-top-sidebar));
-    margin-top: calc(var(--margin-from-topbar) + var(--padding-top-sidebar));
+    height: calc(100vh - var(--htopbar) -  var(--margin-top-sidebar) - 1px );
+    margin-top: var(--margin-top-sidebar);
     margin-left: 28px;
     position: sticky;
-    top: 60px;
+    top: calc((var(--margin-top-sidebar))*2);
 }
 
 .content {
@@ -109,16 +135,15 @@ body {
 }
 
 .container-main {
-    height: 100%;
     width: 614px;
-    
 }
 
-.box-stories {
+.container-stories {
     display: flex;
     position: relative;
     align-items: center;
     margin-top: var(--margin-from-topbar);
+    width: 100%;
     height: 118px;
     background-color:#FFFFFF;
     border: 1px solid #DBDBDB;
@@ -131,6 +156,7 @@ body {
 .container-posts {
     margin-top: 24px;
 }
+
 .container-suggestion {
     display: flex;
     justify-content: space-between;
@@ -138,13 +164,13 @@ body {
     margin-top: 15px;
 }
 
-.box-storie {
+.container-storie {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.box-storie-img {
+.container-storie-img {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -154,8 +180,8 @@ body {
 .frame-storie {
     width: 66px;
     height: 66px;
+    
 }
-
 
 .img-storie {
     width: 56px;
@@ -168,7 +194,16 @@ body {
     margin: auto; 
 }
 
-.box-post {
+.absolute-center {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    top:0;
+    margin: auto; 
+}
+
+.container-post {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,25 +213,63 @@ body {
     border-radius: 3px;
 }
 
-.box-post > div {
+.container-posts:last-child {
+    margin-bottom: 0px;
+}
+
+.container-post-status > img {
+    margin-right: 3px;
+}
+
+.container-post > div {
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
-.box-post-top {
+.container-post-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.box-post-buttons {
+.container-post-buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
-.box-post-status {
+.container-post-status {
     display: flex;
     align-items: center;
+    margin-bottom: 13px;
 }
+
+.container-post-comments {
+    display: flex;
+    flex-direction: column;    
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1rem;
+}
+
+.container-post-comments > * {
+    margin-top: 5px;
+}
+
+.container-push-comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    border-top: 1px solid #DBDBDB;
+}
+
 
 /******************** END CONTAINERS ********************/
 
@@ -208,6 +281,14 @@ body {
     background: #FAFAFA;
     font-size: 12px;
 }
+
+.input-comment {
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 0 15px;
+}
+
 /******************** END INPUT ********************/
 
 
@@ -218,14 +299,17 @@ body {
     background-color: #DBDBDB;
     margin: 0 8px 0 8px;
 }
-
-
 /******************** END DIVISORS ********************/
 
 /******************** START IMAGES ********************/
 .img-post {
-    width: 612px;
+    width: 100%;
     height: 612px;
+}
+
+.video-post {
+    width: 100%;
+    height: auto;
 }
 
 .img-small {
@@ -247,8 +331,20 @@ body {
     height: 56px;
 }
 
+.img-big {
+    width: 100px;
+    height: 100px;
+}
+
+.icon-micro {
+    width: 13px;
+    height: 13px;
+    margin-left: 1px;
+} 
 
 /******************** END IMAGES ********************/
+
+
 
 /******************** START TEXTS ********************/
 .footer * {
@@ -260,10 +356,6 @@ body {
 
 
 en {
-    font-weight: 600;
-}
-
-strong  {
     font-weight: 600;
 }
 
@@ -285,6 +377,7 @@ strong  {
     white-space: nowrap;
 }
 
+
 .txt-gray {
     color: #8E8E8E;
 }
@@ -301,21 +394,144 @@ strong  {
     font-size: 12px;
 }
 
-.fsm {
-    font-size: 14px;
+.fsss {
+    font-size: 10px;
+}
+
+strong  {
+    font-weight: 600;
 }
 
 .bold {
     font-weight: 600;
 }
 
-.skinny {
+.bold:hover {
+    cursor: pointer;
+}
+
+.thin {
     font-weight: 300;
     font-family: RobotoThin;
 }
 
 /******************** END TEXTS ********************/
 
+/******************** START MEDIA QUERY ********************/
+
+/******** START DESKTOP WITHOUT SIDEBAR ***********/
+@media (max-width: 935px) {
+
+    .bar-side {
+       display: none;
+    }
+
+    .bar-top-content{
+        width: 100% ;
+        padding: 0px 18px;   
+    }
+    
+}
+
+/******** END DESKTOP WITHOUT SIDEBAR ***********/
+
+/******** START MOBILE ***********/
+
+@media (max-width: 614px) {
+
+    .mobile {
+        display: flex !important;
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .wmo100 {
+        width: 100% !important;
+    }
+
+    .border-main {
+        border: none;
+        border-radius: 0px;
+        border-top: 1px solid #DBDBDB;
+        border-bottom: 1px solid #DBDBDB;
+    }
+
+
+    .img-post {
+        width: 100%;
+        height: auto;
+    }
+
+    .video-post {
+        width: 100%;
+        height: auto;
+    }
+
+    .bar-top-mobile {
+        height: var(--htopbar);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid #DBDBDB;
+        background-color: #FFFFFF;
+        justify-content: space-around;
+        z-index: 10;
+    }
+    
+    .bar-top-mobile-content{
+        width: 100%;
+        padding: 0px 18px;   
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .container-stories {
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin: 18px 0;
+        height: auto;
+        border: none;
+        background: none;
+        border-radius: none;
+        padding-left: 18px;
+        overflow-x: hidden;
+        margin-bottom: 24px;
+    }
+
+    .content {
+        margin-bottom: var(--hbottombar);
+    }
+  
+    .bar-bottom-mobile {
+        width: 100%;
+        height: 55px;
+        padding: 0 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: #FFFFFF;
+    }
+
+    .last-margin-bottom {
+        margin-bottom: 0px !important;
+    }
+    
+}
+
+/******** END MOBILE ***********/
+
+
+/******************** END MEDIA QUERY ********************/
 
 
 

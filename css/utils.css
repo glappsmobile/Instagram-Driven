@@ -5,7 +5,6 @@
     --margin-m: 15px; /** MARGIN MEDIUM **/
     --margin-s: 11px; /** MARGIN SMALL **/
     --margin-ss: 9px; /** MARGIN SMALL SMALL **/
-
 }
 /******************** END VARS ********************/
 
@@ -36,6 +35,21 @@
 
 /******************** END SIZES ********************/
 
+/******************** START ELEVATION ********************/
+
+.z1 {
+    z-index: 1;
+}
+
+/******************** END ELEVATION ********************/
+
+/******************** START BORDER ********************/
+
+.border-none-b {
+    border-bottom: none;
+}
+
+/******************** END BORDER ********************/
 
 /******************** START DISPLAY ********************/
 .flex {
@@ -61,6 +75,17 @@
 .content-center {
     justify-content: center;
 }
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    background: red;
+    left: 0;
+    top: 0;
+}
 /******************** END DISPLAY ********************/
 
 /******************** START MARGIN ********************/
@@ -68,12 +93,28 @@
     margin: 0px !important;
 }
 
+.margin-none-b {
+    margin-bottom: 0px !important;
+}
+
+.padding-none {
+    padding: 0px !important;
+}
+
 .container-margin-m-r > * {
     margin-right: var(--margin-m);
 }
 
+.container-margin-m-r > *:last-child {
+    margin-right: 0px;
+}
+
 .container-margin-s-r > * {
     margin-right: var(--margin-s);
+}
+
+.container-margin-s-r > *:last-child {
+    margin-right: 0px;
 }
 
 /** LINE **/
@@ -81,7 +122,7 @@
     margin-top: 2px;
 }
 
-.margin-2line-t {
+.margin2line-t {
     margin-top: 4px;
 }
 
@@ -159,6 +200,17 @@
 .margin-ss-l {
     margin-left: var(--margin-ss);
 }
+
+.margin-ss-t {
+    margin-top: var(--margin-ss);
+}
+
+.margin-ss-b {
+    margin-bottom: var(--margin-ss);
+}
+
+
+
 
 /******************** END MARGIN ********************/
 
